@@ -1,0 +1,23 @@
+<resources>
+  <string name="app_name">BsEscrow</string>
+  <string name="address_buyer">Address buyer</string>
+  <string name="address_seller">Address seller</string>
+  <string name="password">Password</string>
+  <string name="amount">Amount</string>
+  <string name="asset_id">Asset id</string>
+  <string name="cash_in">Cash in</string>
+  <string name="validate">Accept validation proposal</string>
+  <string name="create_escrow">Create escrow</string>
+  <string name="cancel_escrow_arbitrating">Cancel escrow arbitrating</string>
+  <string name="cancel_escrow">Cancel escrow</string>
+  <string name="cancel_escrow_proposal">Cancel escrow proposal</string>
+  <string name="validate_cancel_escrow_proposal">Validate cancel escrow proposal</string>
+  <string name="fulfill_escrow_arbitrating">Fulfill escrow arbitrating</string>
+  <string name="fulfill_escrow">Fulfill escrow</string>
+  <string name="success">Success</string>
+  <string name="failure">Failure</string>
+  <string name="balance_of_buyer">Balance of buyer</string>
+  <string name="balance_of_seller">Balance of seller</string>
+  <string name="state_escrow">State escrow</string>
+  <string name="clear_cache">Clear cache</string>
+</resources>

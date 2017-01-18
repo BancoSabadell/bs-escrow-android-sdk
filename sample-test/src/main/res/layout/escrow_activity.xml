@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sabadell.bsescrow.EscrowActivity">
+
+  <LinearLayout
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:paddingLeft="@dimen/activity_horizontal_margin"
+      android:paddingRight="@dimen/activity_horizontal_margin"
+      android:paddingTop="@dimen/activity_vertical_margin"
+      android:paddingBottom="@dimen/activity_vertical_margin">
+
+    <EditText
+        android:id="@+id/et_address_buyer"
+        android:hint="@string/address_buyer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/et_address_seller"
+        android:hint="@string/address_seller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/et_password"
+        android:hint="@string/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/et_amount"
+        android:hint="@string/amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/et_asset_id"
+        android:hint="@string/asset_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:id="@+id/cb_validate"
+        android:text="@string/validate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_output"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bt_cash_in"
+        android:text="@string/cash_in"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bt_create_escrow"
+        android:text="@string/create_escrow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bt_cancel_escrow_arbitrating"
+        android:text="@string/cancel_escrow_arbitrating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bt_cancel_escrow"
+        android:text="@string/cancel_escrow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bt_cancel_escrow_proposal"
+        android:text="@string/cancel_escrow_proposal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bt_validate_cancel_escrow_proposal"
+        android:text="@string/validate_cancel_escrow_proposal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bt_fulfill_escrow_arbitrating"
+        android:text="@string/fulfill_escrow_arbitrating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bt_fulfill_escrow"
+        android:text="@string/fulfill_escrow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bt_balance_of_buyer"
+        android:text="@string/balance_of_buyer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bt_balance_of_seller"
+        android:text="@string/balance_of_seller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bt_state_escrow"
+        android:text="@string/state_escrow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bt_clear_cache"
+        android:text="@string/clear_cache"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+  </LinearLayout>
+</ScrollView>
