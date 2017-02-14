@@ -2,8 +2,8 @@ package com.sabadell.bsescrow;
 
 import android.app.Application;
 import android.os.AsyncTask;
+import com.sabadell.bs_banking.BsBanking;
 import com.sabadell.bs_escrow.BsEscrow;
-import com.sabadell.bs_token.BsToken;
 import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
@@ -11,13 +11,13 @@ import rx_activity_result2.RxActivityResult;
 
 public final class TestSampleApp extends Application {
   private BsEscrow bsEscrow;
-  private BsToken bsToken;
+  private BsBanking bsBanking;
 
   @Override public void onCreate() {
     super.onCreate();
     RxActivityResult.register(this);
 
-    bsToken = new BsToken.Builder()
+    bsBanking = new BsBanking.Builder()
         .development()
         .build(this);
 
@@ -34,10 +34,10 @@ public final class TestSampleApp extends Application {
   }
 
   /**
-   * Provide a single instance BsToken for the entire app lifecycle.
+   * Provide a single instance BsBanking for the entire app lifecycle.
    */
-  public BsToken bsToken() {
-    return bsToken;
+  public BsBanking bsBanking() {
+    return bsBanking;
   }
 
   /**

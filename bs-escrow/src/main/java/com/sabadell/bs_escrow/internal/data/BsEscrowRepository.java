@@ -19,6 +19,19 @@ public final class BsEscrowRepository implements BsEscrow {
     this.networkResponse = new NetworkResponse();
   }
 
+  @Override public Observable<Integer> balanceOf(String address) {
+    if (address == null || address.isEmpty()) {
+      return Observable.error(new RuntimeException(ADDRESS_VALIDATION));
+    }
+    return api.balanceOf(address)
+        .compose(networkResponse.<Balance>process())
+        .map(new Function<Balance, Integer>() {
+          @Override public Integer apply(Balance balance) throws Exception {
+            return balance.getAmount();
+          }
+        });
+  }
+
   @Override public Observable<Escrow> getStateEscrow(String idAsset) {
     if (idAsset == null || idAsset.isEmpty()) {
       return Observable.error(new RuntimeException(ID_ASSET_VALIDATION));

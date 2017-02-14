@@ -21,8 +21,8 @@ import static com.sabadell.bsescrow.R.id.et_password;
 
 final class Raw {
   private static final String PASSWORD = "dummy_password",
-      ADDRESS_BUYER = "0x4f9b5b1909773719e4e96daebe7425596d4f5f04",
-      ADDRESS_SELLER = "0x8000ad8e4bd80411ca94d42fab880271a101d2b8";
+      ADDRESS_BUYER = "0x25e940685e0999d4aa7bd629d739c6a04e625761",
+      ADDRESS_SELLER = "0x6128333118cef876bd620da1efa464437470298d";
 
   static void cashIn(String amount) {
     onView(withId(et_address_buyer)).perform(replaceText(ADDRESS_BUYER), closeSoftKeyboard());

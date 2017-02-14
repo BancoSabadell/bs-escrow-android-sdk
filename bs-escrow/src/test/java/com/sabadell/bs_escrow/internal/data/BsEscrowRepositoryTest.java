@@ -24,6 +24,48 @@ public final class BsEscrowRepositoryTest {
     repositoryUT = new BsEscrowRepository(api);
   }
 
+  @Test public void Verify_Balance_Of_Without_Valid_Address() {
+    repositoryUT.balanceOf(null)
+        .test()
+        .assertNoValues()
+        .assertErrorMessage(BsEscrowRepository.ADDRESS_VALIDATION)
+        .assertNotComplete();
+
+    repositoryUT.balanceOf("")
+        .test()
+        .assertNoValues()
+        .assertErrorMessage(BsEscrowRepository.ADDRESS_VALIDATION)
+        .assertNotComplete();
+  }
+
+  @Test public void Verify_Balance_Of_Success() {
+    String address = "address";
+    Balance balance = new Balance(1);
+
+    when(api.balanceOf(address))
+        .thenReturn(Observable.just(Response.success(balance)));
+
+    repositoryUT.balanceOf(address)
+        .test()
+        .assertNoErrors()
+        .assertValueCount(1)
+        .assertValue(1)
+        .assertComplete();
+  }
+
+  @Test public void Verify_Balance_Of_Failure() {
+    String address = "address";
+    String errorMessage = "Can't get balance";
+
+    when(api.balanceOf(address)).thenReturn(this.<Balance>mockErrorResponse(errorMessage));
+
+    repositoryUT.balanceOf(address)
+        .test()
+        .assertNoValues()
+        .assertErrorMessage(errorMessage)
+        .assertNotComplete();
+  }
+
   @Test public void Verify_stateEscrow_With_Invalid_Id_Asset() {
     repositoryUT.getStateEscrow("")
         .test()

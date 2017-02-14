@@ -16,6 +16,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public interface BsEscrow {
   /**
+   * Get the balance of available tokens for a given account.
+   *
+   * @return the balance.
+   */
+  @CheckResult Observable<Integer> balanceOf(final String address);
+
+  /**
    * Check the escrow state for the supplied idAsset.
    *
    * @param idAsset the identifier of the asset being checked

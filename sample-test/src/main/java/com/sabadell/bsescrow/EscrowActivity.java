@@ -28,7 +28,7 @@ public final class EscrowActivity extends AppCompatActivity {
       int amount = Integer.parseInt(et_amount.getText().toString());
       String address = et_address_buyer.getText().toString();
 
-      app.bsToken().cashIn(this, amount, address).subscribe(result -> {
+      app.bsBanking().cashIn(this, amount, address).subscribe(result -> {
         int resultCode = result.resultCode();
 
         if (resultCode == RESULT_OK) {
@@ -129,7 +129,7 @@ public final class EscrowActivity extends AppCompatActivity {
     findViewById(R.id.bt_balance_of_buyer).setOnClickListener(view -> {
       String address = et_address_buyer.getText().toString();
 
-      app.bsToken().balanceOf(address)
+      app.bsEscrow().balanceOf(address)
           .subscribeOn(app.backgroundThread())
           .observeOn(app.mainThread())
           .subscribe(balance -> tv_output.setText(String.valueOf(balance)),
@@ -139,7 +139,7 @@ public final class EscrowActivity extends AppCompatActivity {
     findViewById(R.id.bt_balance_of_seller).setOnClickListener(view -> {
       String address = et_address_seller.getText().toString();
 
-      app.bsToken().balanceOf(address)
+      app.bsEscrow().balanceOf(address)
           .subscribeOn(app.backgroundThread())
           .observeOn(app.mainThread())
           .subscribe(tx -> tv_output.setText(R.string.success),
@@ -157,7 +157,7 @@ public final class EscrowActivity extends AppCompatActivity {
     });
 
     findViewById(R.id.bt_clear_cache).setOnClickListener(view -> {
-      app.bsToken().clearCache()
+      app.bsBanking().clearCache()
           .subscribe(tx -> tv_output.setText(R.string.success),
               error -> tv_output.setText(error.getMessage()));
     });

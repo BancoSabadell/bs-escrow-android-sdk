@@ -1,5 +1,6 @@
 package com.sabadell.bs_escrow.internal.net;
 
+import com.sabadell.bs_escrow.internal.data.Balance;
 import com.sabadell.bs_escrow.internal.data.Escrow;
 import com.sabadell.bs_escrow.internal.data.Tx;
 import io.reactivex.Observable;
@@ -13,6 +14,9 @@ import retrofit2.http.Path;
 public interface BsEscrowApi {
   String URL_BASE = "http://localhost:8080/escrow/api/v1/";
   String URL_BASE_DEV = "http://localhost:8081/escrow/test/api/v1/";
+
+  @GET("balance/{account}") Observable<Response<Balance>> balanceOf(
+      @Path("account") String account);
 
   @GET("escrows/{assetId}") Observable<Response<Escrow>> stateEscrow(
       @Path("assetId") String assetId);
