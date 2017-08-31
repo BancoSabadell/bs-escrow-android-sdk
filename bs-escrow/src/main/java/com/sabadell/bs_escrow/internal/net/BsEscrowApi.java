@@ -12,7 +12,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface BsEscrowApi {
-  String URL_BASE = "http://admin-hackathon.westeurope.cloudapp.azure.com:8080/escrow/api/v1/";
+  String URL_BASE = "http://innochain.innocells.io:8082/escrow/api/v1/";
   String URL_BASE_DEV = "http://admin-hackathon.westeurope.cloudapp.azure.com:8081/escrow/api/v1/";
 
   @GET("balance/{account}") Observable<Response<Balance>> balanceOf(
